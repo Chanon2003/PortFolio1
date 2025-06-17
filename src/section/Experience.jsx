@@ -30,7 +30,7 @@ const Experience = () => {
             </div>
 
             <div className="grid gap-y-4 ">
-              <TitleLink isHighLight={isMouseEnter[`${SECTION_ID}-${index}`]} title={title} link={link} tool={tool} />
+              <TitleLink isHighLight={isMouseEnter[`${SECTION_ID}-${index}`]} title={title} link={link} tool={tool} materials={materials}/>
 
             {
               materials.length > 0 ?

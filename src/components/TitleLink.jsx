@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { IoClose } from "react-icons/io5"
+import Materail from "./Materail"
 
-const TitleLink = ({ isHighLight, title, link, tool }) => {
+const TitleLink = ({ isHighLight, title, link, tool, materials }) => {
   const [openModal, setIsOpenModal] = useState(false)
   console.log('link', link)
 
@@ -37,7 +38,20 @@ const TitleLink = ({ isHighLight, title, link, tool }) => {
                     {el}
                   </div>
                 ))}
+                   {/* Material List */}
+                {
+                  materials.length > 0 ?
+                    <div className="flex gap-4 text-xl items-center">
+                      {
+                        materials.map((e, i) => (
+                          <Materail key={`${e}-materials-${i}`} icon={e.type} link={e.link} className="w-20"/>
+                        ))
+                      }
+                    </div>
+                    : null
+                }
               </div>
+
             </div>
           </div>
         </section>
