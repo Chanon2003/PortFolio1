@@ -24,10 +24,13 @@ const TitleLink = ({ isHighLight, title, link, tool, materials }) => {
             <div className="flex flex-col lg:flex-row gap-4">
               {/* Video */}
               <div className="w-full lg:w-1/2">
-                <video className="w-full h-auto rounded" controls>
+                {link ? <video className="w-full h-auto rounded" controls>
                   <source src={link} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
+              : <div>no video</div>  
+              }
+
 
               </div>
 
@@ -38,13 +41,13 @@ const TitleLink = ({ isHighLight, title, link, tool, materials }) => {
                     {el}
                   </div>
                 ))}
-                   {/* Material List */}
+                {/* Material List */}
                 {
                   materials.length > 0 ?
                     <div className="flex gap-4 text-xl items-center">
                       {
                         materials.map((e, i) => (
-                          <Materail key={`${e}-materials-${i}`} icon={e.type} link={e.link} className="w-20"/>
+                          <Materail key={`${e}-materials-${i}`} icon={e.type} link={e.link} className="w-20" />
                         ))
                       }
                     </div>
