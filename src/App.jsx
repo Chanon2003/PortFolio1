@@ -1,5 +1,5 @@
 import './App.css'
-import resume from './assets/resume_chanon.pdf'
+import resume from './assets/resume_Chanon1.pdf'
 import BodySection from './section/BodySection'
 import Header from './section/Header'
 import { BrowserRouter as Router, } from "react-router-dom";
